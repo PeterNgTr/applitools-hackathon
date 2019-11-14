@@ -1,0 +1,22 @@
+{
+  "name": "applitools-hackathon",
+  "version": "1.0.0",
+  "description": "applitools hackathon",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "PeterNgTr",
+  "license": "ISC",
+  "dependencies": {
+    "chai": "^4.2.0",
+    "codeceptjs": "^2.3.5",
+    "codeceptjs-applitoolshelper": "^1.1.2",
+    "node-tesseract-promise": "^1.1.1"
+  },
+  "devDependencies": {
+    "@wdio/selenium-standalone-service": "^5.16.5",
+    "currency-parser": "^1.0.0",
+    "webdriverio": "^5.16.6"
+  }
+}
