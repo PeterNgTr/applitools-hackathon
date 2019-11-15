@@ -7,31 +7,31 @@ function _generateRandomString() {
 Feature('VisualAITests - Data Driven');
 
 Before(() => {
-    I.amOnPage('https://demo.applitools.com/hackathon.html');
+    I.amOnPage(process.env['TARGET_URL']);
 });
 
 Scenario('Data-Driven Test @dd1', async () => {
     I.click('Log In');
-    const id1 = _generateRandomString();
+    const id1 = 'dd1';
     await I.eyeCheck('Login Page - Empty username and password', id1);
 });
 
 Scenario('Data-Driven Test @dd2', async () => {
     I.fillField('#password', 'abc');
     I.click('#log-in');
-    await I.eyeCheck('Login Page - Empty username');
+    await I.eyeCheck('Login Page - Empty username', 'dd2');
 });
 
 
 Scenario('Data-Driven Test @dd3', async () => {
     I.fillField('#username', 'abc');
     I.click('#log-in');
-    await I.eyeCheck('Login Page - Empty password');
+    await I.eyeCheck('Login Page - Empty password', 'dd3');
 });
 
 Scenario('Data-Driven Test @dd4', async () => {
     I.fillField('#username', 'abc');
     I.fillField('#password', 'abc');
     I.click('#log-in');
-    await I.eyeCheck('Dashboard page');
+    await I.eyeCheck('Dashboard page', 'dd4');
 });

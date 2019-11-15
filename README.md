@@ -17,7 +17,18 @@ npm i
 brew install tesseract --with-all-languages
 ```
 
+- Also, codeceptjs-applitoolshelper is a [CodeceptJS](https://codecept.io/) helper which can publish tests results on [Applitools](https://applitools.com) after the tests execution is used for this task.
+
+NPM package: https://www.npmjs.com/package/codeceptjs-applitoolshelper 
+  
 # Running tests
+
+Before running tests, we need to set those 2 variable envs:
+
+```sh
+export APPLITOOLS_API='YOUR_APPLITOOLS_KEY'
+export TARGET_URL='your_app_url'
+```
 
 ## Traditional Tests
 
@@ -30,3 +41,20 @@ npx codeceptjs run
 ```sh
 npx codeceptjs run --grep @test1
 ```
+
+## VisualAI Tests
+
+- To run a test
+```sh
+npx codeceptjs run --grep @visualTestLoginPage
+```
+
+More tags could be found inside each test scenario. 
+For instance, you have 
+```js
+Scenario('Login Page UI Elements Test @visualTestLoginPage', async () => {
+    await I.eyeCheck('Login Page');
+});
+```
+
+Then the tag would be: `@visualTestLoginPage`

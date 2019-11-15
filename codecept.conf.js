@@ -1,9 +1,13 @@
+if (!process.env['TARGET_URL'] || process.env['TARGET_URL'] === '') {
+  process.env['TARGET_URL'] = 'https://demo.applitools.com/hackathonV2.html';
+}
+
 exports.config = {
-  tests: './*_test.js',
+  tests: './tests/**/*_test.js',
   output: './output',
   helpers: {
     WebDriver: {
-      url: 'https://demo.applitools.com/hackathonV2.html',
+      url: process.env['TARGET_URL'],
       browser: 'chrome'
     },
     ApplitoolsHelper: {

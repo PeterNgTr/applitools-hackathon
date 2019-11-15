@@ -6,7 +6,7 @@ const tesseract = require('node-tesseract-promise');
 Feature('TraditionalTests');
 
 Before(() => {
-    I.amOnPage('https://demo.applitools.com/hackathonV2.html');
+    I.amOnPage(process.env['TARGET_URL']);
 });
 
 Scenario('Login Page UI Elements Test @test1', () => {
@@ -92,8 +92,13 @@ Scenario('Canvas Chart Test  @test4', async () => {
     expect(chartText).to.include('2019');   
 });
 
-Scenario('Dynamic Content Test  @test5', async () => {
-    I.amOnPage('https://demo.applitools.com/hackathonAppV2.html?showAd=true')
+Scenario('Dynamic Content Test @test5', async () => {
+    I.amOnPage(`${process.env['TARGET_URL']}?showAd=true`)
+    if (await I.grabNumberOfVisibleElements('#username') >= 1) {
+        I.fillField('#username', 'abc');
+        I.fillField('#password', 'abc');
+        I.click('#log-in');
+    }
     I.seeElement('//img[contains(@src, "img/flashSale.gif")]');
     I.seeElement('//img[@src="img/flashSale2.gif"]')
 });
