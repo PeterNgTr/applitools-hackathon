@@ -58,3 +58,36 @@ Scenario('Login Page UI Elements Test @visualTestLoginPage', async () => {
 ```
 
 Then the tag would be: `@visualTestLoginPage`
+
+For a failed case, you can see something like this:
+
+```sh
+Thanhs-MacBook-Pro:applitools-hackathon thanhnguyen$ npx codeceptjs run --grep @visualTestCanvasChart2
+CodeceptJS v2.3.5
+Using test root "/Users/thanhnguyen/Desktop/applitools-hackathon"
+
+VisualAITests - Canvas Chart --
+  ✖ Canvas Chart - Show data next year @visualTestCanvasChart2 in 29819ms
+
+-- FAILURES:
+
+  1) VisualAITests - Canvas Chart
+       Canvas Chart - Show data next year @visualTestCanvasChart2:
+     Test 'Canvas Chart - Show data next year' of 'Application Under Test' detected differences!. See details at: https://eyes.applitools.com/app/batches/00000251828491086877/00000251828488022799?accountId=zFben2IP-EOi2ydhZNqmvQ~~
+  
+  Scenario Steps:
+  
+  - I.eyeCheck("Canvas Chart - Show data next year", "canvasChart") at Test.<anonymous> (tests/visualAI/VisualAI_canvas_test.js:23:13)
+  - I.click("Show data for next year") at Test.<anonymous> (tests/visualAI/VisualAI_canvas_test.js:22:7)
+  - I.click("Compare Expenses") at Test.<anonymous> (tests/visualAI/VisualAI_canvas_test.js:21:7)
+  - I.click("#log-in") at Test.<anonymous> (tests/visualAI/VisualAI_canvas_test.js:20:7)
+  - I.fillField("#password", "abc") at Test.<anonymous> (tests/visualAI/VisualAI_canvas_test.js:19:7)
+  - I.fillField("#username", "abc") at Test.<anonymous> (tests/visualAI/VisualAI_canvas_test.js:18:7)
+  
+  
+  
+  Run with --verbose flag to see NodeJS stacktrace
+
+
+  FAIL  | 0 passed, 1 failed   // 35s
+  ```
