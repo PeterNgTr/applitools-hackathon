@@ -1,5 +1,7 @@
 # Introduction
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/PeterNgTr/applitools-hackathon.svg?token=e5231e0159e1707c69e239eb7f04d0f4008cc22eca858befba9a1f1de95cc5e3&ts=1574681984115)](https://greenkeeper.io/)
+
 This repo aims to show you how to automate tests in traditional way and in Applitools way. 
 
 The traditional way is going with approach using `CodeceptJS` and `WebDriver` helper. In other words, the tests will be executing using `webdriverio@5`.
